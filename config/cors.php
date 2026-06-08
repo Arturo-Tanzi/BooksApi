@@ -17,18 +17,18 @@ return [
 
     'paths' => ['api/*'],
 
-    'allowed_methods' => ['*'],
+    'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], //Sono tutti i metodi HTTP che vuoi consentire per le richieste cross-origin, ovvero le richieste che provengono da un dominio diverso da quello del tuo server.
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['http://localhost:3000'], //Sono gli URL dei domini da cui vuoi consentire le richieste cross-origin. In questo caso, stai consentendo le richieste provenienti da "http://localhost:3000". Puoi aggiungere più URL se necessario.
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['Authorization', 'Content-Type'], 
 
-    'exposed_headers' => ['*'],
+    'exposed_headers' => ['Authorization'], //Quali Header possono essere esposti al browser. Authorization è un header che viene spesso utilizzato per inviare token di autenticazione.
 
-    'max_age' => 60,
+    'max_age' => 60, //Sono il numero di secondi che il browser deve mantenere la risposta di una richiesta cross-origin in cache.
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];

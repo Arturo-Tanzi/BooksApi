@@ -92,7 +92,7 @@ class AuthController extends Controller
         // $newCode = SMS::generateCode();
         // $user->smsCode = $newCode;
         // $user->save();
-        // SMS::send($user->phone, ['Please don't share this code: $user->smsCode']);
+        // SMS::send($user->phone, ["Please don't share this code: $user->smsCode"]);
         
         return response()->json([
             'data' => 'SMS sent to $user->phone',
@@ -170,7 +170,7 @@ class AuthController extends Controller
         $user = Auth::user();
         
         // UNSECURE
-        // $user = User::findOrFail($request->user_id); // sent user_id in request body 
+        // $user = User::findOrFail($request->user_id); // sent user_id in request body
         
         $user->email = $request->email;
         $user->save();
